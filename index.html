@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TasteVille - Menu & Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>TasteVille</h1>
+        <p>Your taste, our priority</p>
+    </header>
+
+    <section>
+        <h2>Food Menu</h2>
+
+        <table>
+            <tr>
+                <th>Image</th>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Price</th>
+            </tr>
+
+            <tr>
+                <td><img src="images/pizza.jpg" alt="Pizza"></td>
+                <td>Margherita Pizza</td>
+                <td>Main Course</td>
+                <td>₹230</td>
+            </tr>
+
+            <tr>
+                <td><img src="images/burger.jpg" alt="Burger"></td>
+                <td>Chicken Burger</td>
+                <td>Snacks</td>
+                <td>₹150</td>
+            </tr>
+
+            <tr>
+                <td><img src="images/fries.jpg" alt="Fries"></td>
+                <td>French Fries</td>
+                <td>Snacks</td>
+                <td>₹90</td>
+            </tr>
+
+            <tr>
+                <td><img src="images/pasta.jpg" alt="Pasta"></td>
+                <td>Veg Pasta</td>
+                <td>Main Course</td>
+                <td>₹180</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Customer Feedback</h2>
+
+        <form id="feedbackForm">
+
+            <label>Name:</label>
+            <input type="text" id="name">
+
+            <label>Email:</label>
+            <input type="text" id="email">
+
+            <label>Your Rating:</label>
+            <div class="stars">
+                <span data-value="5">★</span>
+                <span data-value="4">★</span>
+                <span data-value="3">★</span>
+                <span data-value="2">★</span>
+                <span data-value="1">★</span>
+            </div>
+
+            <input type="hidden" id="rating">
+
+            <label>Your Feedback:</label>
+            <textarea id="feedback" rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="output"></div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
