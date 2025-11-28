@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Food - TasteVille</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="feedback.js"></script>
+</head>
+<body>
+
+<header class="header">
+    <img src="D:\tasteville1\Tasteville1\images\logo.jpg" class="logo">
+    <h1>Your Order</h1>
+</header>
+
+<!-- Order Summary Box -->
+<div class="selection-box">
+    <h2>Order Summary</h2>
+    <p id="selectedItem"></p>
+    <p id="selectedPrice"></p>
+    <p id="selectedQty"></p>
+    <p id="selectedChoice"></p>
+    <p id="totalAmount"></p>
+
+    <button id="buyNowBtn" class="btn">Buy Now</button>
+</div>
+
+<!-- Feedback Form Box -->
+<div class="feedback-box" style="display:none;">
+    <h2>Give Your Feedback</h2>
+    <form id="feedbackForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" placeholder="Write your feedback"></textarea>
+        </div>
+
+        <button type="submit" class="btn">Submit Feedback</button>
+    </form>
+</div>
+
+<!-- Feedback Output -->
+<div id="output"></div>
+
+<!-- Script to fetch URL parameters, calculate total, and handle Buy Now -->
+<script>
+    const q = new URLSearchParams(window.location.search);
+
+    const item = q.get("item");
+    const price = parseFloat(q.get("price"));
+    const qty = parseInt(q.get("qty"));
+    const choice = q.get("choice");
+
+    document.getElementById("selectedItem").textContent = "Food: " + item;
+    document.getElementById("selectedPrice").textContent = "Price: ₹" + price;
+    document.getElementById("selectedQty").textContent = "Quantity: " + qty;
+    document.getElementById("selectedChoice").textContent = "Choice: " + choice;
+
+    const total = price * qty;
+    document.getElementById("totalAmount").textContent = "Total Amount: ₹" + total;
+
+    // Show feedback form on Buy Now click
+    document.getElementById("buyNowBtn").addEventListener("click", () => {
+        document.querySelector(".feedback-box").style.display = "block";
+        // Scroll to feedback form
+        document.querySelector(".feedback-box").scrollIntoView({ behavior: "smooth" });
+    });
+</script>
+
+</body>
+</html>

@@ -1,90 +1,134 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TasteVille - Menu & Feedback</title>
+    <title>TasteVille - Menu</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    <script defer src="script.js"></script>
+      <script src="https://cdn.tailwindcss.com"></script>
 
+</head>
 <body>
 
-    <header>
-        <h1>TasteVille</h1>
-        <p>Your taste, our priority</p>
-    </header>
+<header class="header">
+    <img src="D:\tasteville1\Tasteville1\images\logo.jpg" class="logo">
+    <h1>TasteVille</h1>
+    <p>Delicious food at your fingertips</p>
+</header>
 
-    <section>
-        <h2>Food Menu</h2>
+<section class="menu">
+    <h2>Our Menu</h2>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Food Item</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
 
-        <table>
-            <tr>
-                <th>Image</th>
-                <th>Item</th>
-                <th>Category</th>
-                <th>Price</th>
-            </tr>
+        <!-- Pizza -->
+        <tr>
+            <td><img src="images/pizza.png"></td>
+            <td>Margherita Pizza</td>
+            <td>₹230</td>
+            <td>
+                <label>Qty:</label>
+                <input type="number" id="qty_pizza" value="1" min="1" class="qty-box">
+                <label>Choice:</label>
+                <select id="choice_pizza" class="choice-box">
+                    <option>Regular</option>
+                    <option>Extra Cheese</option>
+                    <option>Spicy</option>
+                </select>
+                <button class="btn" onclick="selectFood('Margherita Pizza', 230, 'qty_pizza', 'choice_pizza')">Select</button>
+            </td>
+        </tr>
 
-            <tr>
-                <td><img src="images/pizza.jpg" alt="Pizza"></td>
-                <td>Margherita Pizza</td>
-                <td>Main Course</td>
-                <td>₹230</td>
-            </tr>
+        <!-- Chicken Burger -->
+        <tr>
+            <td><img src="images/burger.png"></td>
+            <td>Chicken Burger</td>
+            <td>₹150</td>
+            <td>
+                <label>Qty:</label>
+                <input type="number" id="qty_burger" value="1" min="1" class="qty-box">
+                <label>Choice:</label>
+                <select id="choice_burger" class="choice-box">
+                    <option>Regular</option>
+                    <option>Cheese</option>
+                    <option>Spicy</option>
+                </select>
+                <button class="btn" onclick="selectFood('Chicken Burger', 150, 'qty_burger', 'choice_burger')">Select</button>
+            </td>
+        </tr>
 
-            <tr>
-                <td><img src="images/burger.jpg" alt="Burger"></td>
-                <td>Chicken Burger</td>
-                <td>Snacks</td>
-                <td>₹150</td>
-            </tr>
+        <!-- French Fries -->
+        <tr>
+            <td><img src="images/fries.png"></td>
+            <td>French Fries</td>
+            <td>₹70</td>
+            <td>
+                <label>Qty:</label>
+                <input type="number" id="qty_fries" value="1" min="1" class="qty-box">
+                <label>Choice:</label>
+                <select id="choice_fries" class="choice-box">
+                    <option>Regular</option>
+                    <option>Spicy</option>
+                    <option>Cheesy</option>
+                </select>
+                <button class="btn" onclick="selectFood('French Fries', 70, 'qty_fries', 'choice_fries')">Select</button>
+            </td>
+        </tr>
 
-            <tr>
-                <td><img src="images/fries.jpg" alt="Fries"></td>
-                <td>French Fries</td>
-                <td>Snacks</td>
-                <td>₹90</td>
-            </tr>
+        <!-- Veg Pasta -->
+        <tr>
+            <td><img src="images/pasta.png"></td>
+            <td>Veg Pasta</td>
+            <td>₹180</td>
+            <td>
+                <label>Qty:</label>
+                <input type="number" id="qty_pasta" value="1" min="1" class="qty-box">
+                <label>Choice:</label>
+                <select id="choice_pasta" class="choice-box">
+                    <option>Regular</option>
+                    <option>Extra Cheese</option>
+                    <option>Spicy</option>
+                </select>
+                <button class="btn" onclick="selectFood('Veg Pasta', 180, 'qty_pasta', 'choice_pasta')">Select</button>
+            </td>
+        </tr>
 
-            <tr>
-                <td><img src="images/pasta.jpg" alt="Pasta"></td>
-                <td>Veg Pasta</td>
-                <td>Main Course</td>
-                <td>₹180</td>
-            </tr>
-        </table>
-    </section>
+    </table>
+</section>
 
-    <section>
-        <h2>Customer Feedback</h2>
+<section class="location">
+    <h2>Our Location</h2>
 
-        <form id="feedbackForm">
+    <div class="location-container">
 
-            <label>Name:</label>
-            <input type="text" id="name">
+        <!-- Map -->
+<section id="location" class="max-w-6xl mx-auto px-6 py-10">
+    <h3 class="text-2xl font-bold">Find Us</h3>
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="text-gray-600">
+        <p class="font-semibold">TasteVille</p>
+        <p class="mt-1">Kondampatty, Tamil Nadu 641202</p>
+        <p class="mt-2 text-sm">Open daily 11:30–23:00. Walk-ins welcome; reservations recommended for weekends.</p>
+        <div class="mt-4 flex gap-3">
+        </div>
+      </div>
+      <div class="rounded-lg overflow-hidden shadow">
+        <iframe
+          title="map"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7837.589906831198!2d77.06037224999997!3d10.826998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1764317210567!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-56 border-0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
 
-            <label>Email:</label>
-            <input type="text" id="email">
+    </div>
+</section>
 
-            <label>Your Rating:</label>
-            <div class="stars">
-                <span data-value="5">★</span>
-                <span data-value="4">★</span>
-                <span data-value="3">★</span>
-                <span data-value="2">★</span>
-                <span data-value="1">★</span>
-            </div>
-
-            <input type="hidden" id="rating">
-
-            <label>Your Feedback:</label>
-            <textarea id="feedback" rows="4"></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
-
-        <div id="output"></div>
-    </section>
-
-    <script src="script.js"></script>
 
 </body>
 </html>

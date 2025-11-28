@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TasteVille - Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="D:\tasteville1\Tasteville1\images\logo.jpg" class="logo">
+    <h1>Feedback Page</h1>
+</header>
+
+<section>
+    <h2>You selected: <span id="selectedFood"></span></h2>
+
+    <form id="feedbackForm">
+
+        <label>Name:</label>
+        <input type="text" id="name">
+
+        <label>Email:</label>
+        <input type="text" id="email">
+
+        <label>Your Feedback:</label>
+        <textarea id="feedback" rows="4"></textarea>
+
+        <button type="submit" class="btn">Submit Feedback</button>
+    </form>
+
+    <div id="output"></div>
+</section>
+
+<script src="script.js"></script>
+
+<script>
+    const q = new URLSearchParams(window.location.search);
+    document.getElementById("selectedFood").textContent = q.get("item");
+</script>
+</body>
+</html>
